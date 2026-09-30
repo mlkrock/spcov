@@ -121,7 +121,6 @@ GGDescent <- function(Sigma, Sigma0, S, lambda, del, nsteps,
       right <- g.omega - ttt * sum(grad.g * gen.grad.g) + ttt * sum(gen.grad.g ^ 2) / 2
       if (is.na(left) || is.na(right)) {
         print("left or right is NA.")
-        browser()
       }
       if (left <= right) {
         # accept this step size
@@ -187,7 +186,6 @@ GGDescent <- function(Sigma, Sigma0, S, lambda, del, nsteps,
                        tol = tol, trace=trace))
     }
     
-    browser()
     cat("--Returning initial Sigma since GGDescent/Nesterov did not decrease objective", fill=T)
     Sigma <- Sigma.starting
   }
